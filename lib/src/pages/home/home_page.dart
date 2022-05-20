@@ -18,17 +18,15 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       backgroundColor: MyColors.color.shade800,
-      body: Container(
-        child: ListView(
-          padding: EdgeInsets.only(top: 55),
-          shrinkWrap: true,
-          children: [
-            Column(
-              children: [
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Container(
+      body: Stack(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 55),
+            child: Container(
+              child: CustomScrollView(
+                slivers: [
+                  SliverToBoxAdapter(
+                    child: Container(
                       //height: mediaQ.height * 0.6,
                       decoration: BoxDecoration(color: MyColors.color.shade800),
                       child: Column(
@@ -189,7 +187,9 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                     ),
-                    Container(
+                  ),
+                  SliverToBoxAdapter(
+                    child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(20),
@@ -303,83 +303,136 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                     ),
-                  ],
-                ),
-                Container(
-                  color: Colors.black,
-                  child: Row(
-                    children: [
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        'Atividades',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      Spacer(),
-                      TextButton(onPressed: () {}, child: Text('Todas')),
-                      TextButton(
-                          onPressed: () {},
-                          child: Text(
-                            'Minhas',
-                            style: TextStyle(color: Colors.white),
-                          )),
-                      SizedBox(
-                        width: 10,
-                      ),
-                    ],
                   ),
-                ),
-                Container(
-                  height: 100,
-                  width: 100,
-                  color: Colors.red,
-                ),
-                Container(
-                  height: 100,
-                  width: 100,
-                  color: Colors.red,
-                ),
-                Container(
-                  height: 100,
-                  width: 100,
-                  color: Colors.red,
-                ),
-                Container(
-                  height: 100,
-                  width: 100,
-                  color: Colors.red,
-                ),
-                Container(
-                  height: 100,
-                  width: 100,
-                  color: Colors.red,
-                ),
-                Container(
-                  height: 100,
-                  width: 100,
-                  color: Colors.red,
-                ),
-                Container(
-                  height: 100,
-                  width: 100,
-                  color: Colors.red,
-                ),
-                Container(
-                  height: 100,
-                  width: 100,
-                  color: Colors.red,
-                ),
-                Container(
-                  height: 100,
-                  width: 100,
-                  color: Colors.red,
-                ),
-              ],
+                  SliverPersistentHeader(
+                    delegate: Delegate(),
+                    pinned: true,
+                  ),
+                  SliverToBoxAdapter(
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 15, horizontal: 10),
+                      color: Colors.black,
+                      height: mediaQ.height * 0.120,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            'Pague suas contas pelo PicPay',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 21),
+                          ),
+                          SizedBox(
+                            height: 8,
+                          ),
+                          Text(
+                            'Parcele em até 12x com qualquer cartão\nde crédito',
+                            style: TextStyle(color: Colors.white, fontSize: 17),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SliverToBoxAdapter(
+                    child: Container(
+                      height: 200,
+                      color: Colors.purple,
+                      child: const Text('teste'),
+                    ),
+                  ),
+                  SliverToBoxAdapter(
+                    child: Container(
+                      height: 200,
+                      color: Colors.purple,
+                      child: const Text('teste'),
+                    ),
+                  ),
+                  SliverToBoxAdapter(
+                    child: Container(
+                      height: 200,
+                      color: Colors.purple,
+                      child: const Text('teste'),
+                    ),
+                  ),
+                  SliverToBoxAdapter(
+                    child: Container(
+                      height: 200,
+                      color: Colors.purple,
+                      child: const Text('teste'),
+                    ),
+                  ),
+                  SliverToBoxAdapter(
+                    child: Container(
+                      height: 200,
+                      color: Colors.purple,
+                      child: const Text('teste'),
+                    ),
+                  ),
+                  SliverToBoxAdapter(
+                    child: Container(
+                      height: 200,
+                      color: Colors.purple,
+                      child: const Text('teste'),
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ],
-        ),
+          ),
+          Container(
+            color: MyColors.color.shade800,
+            height: 50,
+          )
+        ],
       ),
     );
+  }
+}
+
+class Delegate extends SliverPersistentHeaderDelegate {
+  Delegate();
+
+  @override
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
+    return Container(
+      color: Colors.black,
+      child: Row(
+        children: [
+          SizedBox(
+            width: 10,
+          ),
+          Text(
+            'Atividades',
+            style: TextStyle(color: Colors.white),
+          ),
+          Spacer(),
+          TextButton(onPressed: () {}, child: Text('Todas')),
+          TextButton(
+              onPressed: () {},
+              child: Text(
+                'Minhas',
+                style: TextStyle(color: Colors.white),
+              )),
+          SizedBox(
+            width: 10,
+          ),
+        ],
+      ),
+    );
+  }
+
+  @override
+  double get maxExtent => 45;
+
+  @override
+  double get minExtent => 45;
+
+  @override
+  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) {
+    return true;
   }
 }
