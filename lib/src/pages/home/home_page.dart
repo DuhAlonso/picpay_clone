@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:picpay_clone/src/core/ui/my_colors.dart';
+import 'package:picpay_clone/src/models/transction_model.dart';
 import 'package:picpay_clone/src/pages/home/widgets/activity_box_menu_home.dart';
 import 'package:picpay_clone/src/pages/home/widgets/banner_home_promo.dart';
+import 'package:picpay_clone/src/pages/home/widgets/central_donnation.dart';
 import 'package:picpay_clone/src/pages/home/widgets/menu_home_box.dart';
 import 'package:picpay_clone/src/pages/home/widgets/suggestion_avatar.dart';
+import 'package:picpay_clone/src/pages/home/widgets/transanctions_tile.dart';
+import 'package:picpay_clone/src/core/app_data/app_data.dart' as app_data;
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -735,6 +739,51 @@ class _HomePageState extends State<HomePage> {
                         height: 5,
                         color: Colors.blueGrey[600]!.withAlpha(150),
                       ),
+                    ),
+                  ),
+                  SliverToBoxAdapter(
+                    child: Container(
+                      height: 170,
+                      padding: const EdgeInsets.all(10),
+                      color: Colors.black,
+                      child: CentralDonnation(),
+                    ),
+                  ),
+                  SliverToBoxAdapter(
+                    child: Container(
+                      height: 27,
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      color: Colors.black,
+                      child: Container(
+                        height: 5,
+                        color: Colors.blueGrey[600]!.withAlpha(150),
+                      ),
+                    ),
+                  ),
+                  SliverToBoxAdapter(
+                    child: Container(
+                      padding: const EdgeInsets.only(bottom: 10),
+                      color: Colors.black,
+                      child: ListView.separated(
+                          padding: EdgeInsets.zero,
+                          physics: NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          itemBuilder: (context, index) {
+                            return TransanctionsTile(
+                                transctionModel: app_data.transactions[index]);
+                          },
+                          itemCount: app_data.transactions.length,
+                          separatorBuilder: (context, index) {
+                            return Container(
+                              height: 27,
+                              padding: const EdgeInsets.symmetric(vertical: 10),
+                              color: Colors.black,
+                              child: Container(
+                                height: 5,
+                                color: Colors.blueGrey[600]!.withAlpha(150),
+                              ),
+                            );
+                          }),
                     ),
                   ),
                 ],
