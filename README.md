@@ -38,9 +38,7 @@ Escolhi o picpay pois é um app muito querido por milhões de pessoas, que uso n
 
 <img src="https://github.com/DuhAlonso/picpay_clone/blob/main/screenshots/REALVSCLONE.png" width="600">
 
-<img src=".screenshots/picclone.mp4" width="600" ><video src=".screenshots/picclone.mp4" autoplay type="video/mp4">
-
-<img src="https://github.com/DuhAlonso/picpay_clone/blob/main/screenshots/home.png" width="250"><img src="https://github.com/DuhAlonso/picpay_clone/blob/main/screenshots/home.png" width="250"><img src="https://github.com/DuhAlonso/picpay_clone/blob/main/screenshots/Atividades.png" width="250"> 
+<img src="https://github.com/DuhAlonso/picpay_clone/blob/main/screenshots/picclone.gif" width="250"> <img src="https://github.com/DuhAlonso/picpay_clone/blob/main/screenshots/home.png" width="250"> <img src="https://github.com/DuhAlonso/picpay_clone/blob/main/screenshots/Atividades.png" width="250"> 
 <p>
 </p>
 
