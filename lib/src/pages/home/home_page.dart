@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:picpay_clone/src/core/ui/my_colors.dart';
 import 'package:picpay_clone/src/pages/home/widgets/activity_box_menu_home.dart';
@@ -16,32 +17,70 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool isVisible = true;
+
   @override
   Widget build(BuildContext context) {
     var mediaQ = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: MyColors.color.shade800,
+      backgroundColor: MyColors.color.shade500,
       body: Stack(
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 55),
+            padding: const EdgeInsets.only(top: 45),
             child: SizedBox(
               child: CustomScrollView(
                 slivers: [
                   SliverToBoxAdapter(
                     child: Container(
                       //height: mediaQ.height * 0.6,
-                      decoration: BoxDecoration(color: MyColors.color.shade800),
+                      decoration: BoxDecoration(color: MyColors.color.shade500),
                       child: Column(
                         children: [
                           Padding(
                             padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
                             child: Row(
                               children: [
-                                const CircleAvatar(
-                                  backgroundImage: NetworkImage(
-                                      'https://avatars.githubusercontent.com/u/53386801?v=4'),
+                                Stack(
+                                  alignment: Alignment.center,
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.all(3.5),
+                                      height: 60,
+                                      width: 60,
+                                      child: const CircleAvatar(
+                                          radius: 50,
+                                          backgroundImage: NetworkImage(
+                                              'https://avatars.githubusercontent.com/u/53386801?v=4')),
+                                    ),
+                                    SizedBox(
+                                      height: 60,
+                                      width: 60,
+                                      child: Align(
+                                        alignment: Alignment.bottomCenter,
+                                        child: Container(
+                                          width: 32,
+                                          height: 15,
+                                          decoration: BoxDecoration(
+                                              color: MyColors.color[200],
+                                              borderRadius:
+                                                  const BorderRadius.all(
+                                                      Radius.circular(5)),
+                                              border: Border.all(
+                                                  color: Colors.white,
+                                                  width: 2)),
+                                          child: const Text(
+                                            'PRO',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                                fontSize: 09,
+                                                color: Colors.white),
+                                          ),
+                                        ),
+                                      ),
+                                    )
+                                  ],
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.symmetric(
@@ -81,18 +120,13 @@ class _HomePageState extends State<HomePage> {
                                 ),
                                 const Spacer(),
                                 const Icon(
-                                  Icons.currency_exchange,
+                                  CupertinoIcons.bubble_left_bubble_right,
                                   color: Colors.white,
                                   size: 22,
                                 ),
                                 const SizedBox(
-                                  width: 35,
-                                ),
-                                const Icon(
-                                  Icons.forum,
-                                  color: Colors.white,
-                                  size: 22,
-                                ),
+                                  width: 15,
+                                )
                               ],
                             ),
                           ),
@@ -119,20 +153,40 @@ class _HomePageState extends State<HomePage> {
                                       ),
                                     ),
                                     Row(
-                                      children: const [
-                                        Text(
-                                          "R\$  19.512,56",
+                                      children: [
+                                        const Text(
+                                          "R\$ ",
                                           style: TextStyle(
                                             fontSize: 19,
                                             color: Colors.white,
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),
-                                        SizedBox(
-                                          width: 10,
+                                        Text(
+                                          isVisible
+                                              ? "19.512,56"
+                                              : ' ----------------',
+                                          style: TextStyle(
+                                              fontSize: 19,
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold,
+                                              letterSpacing:
+                                                  isVisible ? null : -5),
                                         ),
-                                        Icon(
-                                          Icons.visibility_off,
+                                        IconButton(
+                                          visualDensity:
+                                              const VisualDensity(vertical: -4),
+                                          padding: EdgeInsets.zero,
+                                          onPressed: () {
+                                            setState(() {
+                                              isVisible = !isVisible;
+                                            });
+                                          },
+                                          icon: isVisible
+                                              ? const Icon(
+                                                  Icons.visibility_off_outlined)
+                                              : const Icon(
+                                                  Icons.visibility_outlined),
                                           color: Colors.white,
                                         )
                                       ],
@@ -148,7 +202,12 @@ class _HomePageState extends State<HomePage> {
                                         TextStyle(fontWeight: FontWeight.bold),
                                   ),
                                   style: ElevatedButton.styleFrom(
-                                      primary: Colors.white),
+                                      primary: Colors.white,
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 24),
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(10))),
                                 )
                               ],
                             ),
@@ -236,13 +295,16 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                           ),
-                          const Text(
-                            "Sugestões para você",
-                            textAlign: TextAlign.start,
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
+                          const Padding(
+                            padding: EdgeInsets.only(left: 10),
+                            child: Text(
+                              "Sugestões para você",
+                              textAlign: TextAlign.start,
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                           Padding(
@@ -621,8 +683,8 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Container(
-            color: MyColors.color.shade800,
-            height: 50,
+            color: MyColors.color.shade500,
+            height: 40,
           )
         ],
       ),

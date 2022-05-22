@@ -54,10 +54,26 @@ class _PersistentTabVirePageState extends State<PersistentTabVirePage> {
 List<Widget> _buildScreens({required String name}) {
   return [
     const HomePage(),
-    Container(),
-    Container(),
-    Container(),
-    Container(),
+    Container(
+      child: Center(
+        child: Text('EM BREVE'),
+      ),
+    ),
+    Container(
+      child: Center(
+        child: Text('EM BREVE'),
+      ),
+    ),
+    Container(
+      child: Center(
+        child: Text('EM BREVE'),
+      ),
+    ),
+    Container(
+      child: Center(
+        child: Text('EM BREVE'),
+      ),
+    ),
   ];
 }
 

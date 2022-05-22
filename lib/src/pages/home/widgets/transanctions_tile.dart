@@ -53,7 +53,7 @@ class TransanctionsTile extends StatelessWidget {
           Row(
             children: [
               Text(
-                'R\$ ${transctionModel.value.toStringAsFixed(2)}',
+                'R\$ ${transctionModel.value}',
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: transctionModel.isdeposit

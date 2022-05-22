@@ -6,10 +6,10 @@ class MyColors {
     <int, Color>{
       50: Color(0xFF162A49),
       100: Color(0xFF28d46e),
-      200: Color(0xFF162A49),
+      200: Color(0xFF33C26A),
       300: Color(0xFF162A49),
       400: Color(0xFF162A49),
-      500: Color(0xFF162A49),
+      500: Color(0xFF238662),
       600: Color(0xFF34c76f),
       700: Color(0xFF189f4e),
       800: Color(0xFF0a632e),

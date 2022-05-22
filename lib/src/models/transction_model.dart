@@ -1,6 +1,6 @@
 class TransctionModel {
   final String urlAvatar;
-  final double value;
+  final String value;
   final String fromUser;
   final String toUser;
   final String description;

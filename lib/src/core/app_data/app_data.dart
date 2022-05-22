@@ -7,7 +7,7 @@ final List<TransctionModel> transactions = <TransctionModel>[
   TransctionModel(
     urlAvatar:
         'https://noticiasdemogi.com.br/wp-content/uploads/2021/06/cartao-credito-picpay.png',
-    value: 189.90,
+    value: '189,90',
     description: 'esteve em',
     fromUser: 'Você',
     toUser: 'Cento Automotivo',
@@ -18,7 +18,7 @@ final List<TransctionModel> transactions = <TransctionModel>[
   ),
   TransctionModel(
     urlAvatar: 'https://logospng.org/download/pix/logo-pix-icone-1024.png',
-    value: 69.90,
+    value: '69,90',
     description: 'enviou um',
     fromUser: 'Você',
     toUser: 'PIX',
@@ -30,7 +30,7 @@ final List<TransctionModel> transactions = <TransctionModel>[
   TransctionModel(
     urlAvatar:
         'https://noticiasdemogi.com.br/wp-content/uploads/2021/06/cartao-credito-picpay.png',
-    value: 10.50,
+    value: '10,50',
     description: 'esteve em',
     fromUser: 'Você',
     toUser: 'Pg *cantina Zé',
@@ -42,7 +42,7 @@ final List<TransctionModel> transactions = <TransctionModel>[
   TransctionModel(
     urlAvatar:
         'https://noticiasdemogi.com.br/wp-content/uploads/2021/06/cartao-credito-picpay.png',
-    value: 350.00,
+    value: '350,00',
     description: 'esteve em',
     fromUser: 'Você',
     toUser: 'Vet Animal Feliz',
@@ -53,7 +53,7 @@ final List<TransctionModel> transactions = <TransctionModel>[
   ),
   TransctionModel(
       urlAvatar: 'https://logospng.org/download/pix/logo-pix-icone-1024.png',
-      value: 300.00,
+      value: '300,00',
       description: 'recebeu um',
       fromUser: 'Você',
       toUser: 'Pix',
@@ -64,7 +64,7 @@ final List<TransctionModel> transactions = <TransctionModel>[
       isdeposit: true),
   TransctionModel(
     urlAvatar: 'https://logospng.org/download/pix/logo-pix-icone-1024.png',
-    value: 58.90,
+    value: '58,90',
     description: 'enviou um',
     fromUser: 'Você',
     toUser: 'Pix',
@@ -76,7 +76,7 @@ final List<TransctionModel> transactions = <TransctionModel>[
   TransctionModel(
     urlAvatar:
         'https://noticiasdemogi.com.br/wp-content/uploads/2021/06/cartao-credito-picpay.png',
-    value: 905.90,
+    value: '905,90',
     description: 'esteve em',
     fromUser: 'Você',
     toUser: 'Mercadinho green',
@@ -88,7 +88,7 @@ final List<TransctionModel> transactions = <TransctionModel>[
   TransctionModel(
     urlAvatar:
         'https://pixel.cuboup.com/wp-content/uploads/edd/2021/08/Icone-Codigo-de-Barras-1.jpg',
-    value: 189.90,
+    value: '189,90',
     description: 'pagou um',
     fromUser: 'Você',
     toUser: 'Boleto',
@@ -100,7 +100,7 @@ final List<TransctionModel> transactions = <TransctionModel>[
   TransctionModel(
     urlAvatar:
         'https://noticiasdemogi.com.br/wp-content/uploads/2021/06/cartao-credito-picpay.png',
-    value: 19000.90,
+    value: '26.000,00',
     description: 'esteve em',
     fromUser: 'Você',
     toUser: 'Honda',
@@ -111,7 +111,7 @@ final List<TransctionModel> transactions = <TransctionModel>[
   ),
   TransctionModel(
     urlAvatar: 'https://logospng.org/download/pix/logo-pix-icone-1024.png',
-    value: 7.000,
+    value: '7.000,90',
     description: 'recebeu um',
     fromUser: 'Você',
     toUser: 'Pix',
@@ -123,7 +123,7 @@ final List<TransctionModel> transactions = <TransctionModel>[
   TransctionModel(
     urlAvatar:
         'https://noticiasdemogi.com.br/wp-content/uploads/2021/06/cartao-credito-picpay.png',
-    value: 240.90,
+    value: '240,90',
     description: 'esteve em',
     fromUser: 'Você',
     toUser: 'Cento Automotivo Shell',
@@ -134,7 +134,7 @@ final List<TransctionModel> transactions = <TransctionModel>[
   ),
   TransctionModel(
     urlAvatar: 'https://logospng.org/download/pix/logo-pix-icone-1024.png',
-    value: 4000.90,
+    value: '2.358,00',
     description: 'enviou um',
     fromUser: 'Você',
     toUser: 'Pix',
@@ -146,7 +146,7 @@ final List<TransctionModel> transactions = <TransctionModel>[
   TransctionModel(
     urlAvatar:
         'https://noticiasdemogi.com.br/wp-content/uploads/2021/06/cartao-credito-picpay.png',
-    value: 4999.90,
+    value: '2.499,99',
     description: 'esteve em',
     fromUser: 'Você',
     toUser: 'CVC Passagens',
@@ -157,7 +157,7 @@ final List<TransctionModel> transactions = <TransctionModel>[
   ),
   TransctionModel(
       urlAvatar: 'https://logospng.org/download/pix/logo-pix-icone-1024.png',
-      value: 4000.90,
+      value: '4.000,00',
       description: 'recebeu um',
       fromUser: 'Você',
       toUser: 'Pix',
