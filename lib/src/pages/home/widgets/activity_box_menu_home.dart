@@ -1,29 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:picpay_clone/src/models/activity_menu_model.dart';
 
 class ActivityBoxMenuHome extends StatelessWidget {
-  final String title;
-  final String? subTitle;
-  final String urlPhoto;
-  final bool isTwoLines;
-  final bool contentButton;
-  final Color? color;
+  final ActivityMenuModel model;
 
-  const ActivityBoxMenuHome({
-    Key? key,
-    required this.title,
-    this.subTitle,
-    required this.urlPhoto,
-    this.isTwoLines = false,
-    this.contentButton = false,
-    this.color,
-  }) : super(key: key);
+  const ActivityBoxMenuHome({Key? key, required this.model}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(right: 15),
+      padding: const EdgeInsets.only(right: 15),
       child: Container(
-        height: contentButton ? 220 : 170,
+        height: model.contentButton ? 220 : 170,
         width: 150,
         decoration: BoxDecoration(
           border: Border.all(color: Colors.white.withOpacity(0.5)),
@@ -38,39 +26,41 @@ class ActivityBoxMenuHome extends StatelessWidget {
                 height: 55,
                 width: 55,
                 decoration: BoxDecoration(
-                    color: color ?? Colors.green[200],
+                    color: model.color ?? Colors.green[200],
                     borderRadius: BorderRadius.circular(10),
                     image: DecorationImage(
-                        image: NetworkImage(urlPhoto), fit: BoxFit.cover)),
+                        image: NetworkImage(model.urlPhoto),
+                        fit: BoxFit.cover)),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Column(
                 children: [
                   Text(
-                    title,
+                    model.title,
                     maxLines: 4,
-                    style: TextStyle(color: Colors.white, fontSize: 17),
+                    style: const TextStyle(color: Colors.white, fontSize: 17),
                   ),
                 ],
               ),
-              isTwoLines
+              model.isTwoLines
                   ? Padding(
                       padding: const EdgeInsets.only(top: 10),
                       child: Text(
-                        subTitle ?? '',
-                        style: TextStyle(color: Colors.white, fontSize: 15),
+                        model.subTitle ?? '',
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 15),
                       ),
                     )
-                  : SizedBox.shrink(),
-              contentButton
+                  : const SizedBox.shrink(),
+              model.contentButton
                   ? Padding(
                       padding: const EdgeInsets.only(top: 10),
                       child: Center(
                         child: ElevatedButton(
                           onPressed: () {},
-                          child: Text(
+                          child: const Text(
                             'Conferir',
                             style: TextStyle(
                                 color: Colors.white,
@@ -79,13 +69,13 @@ class ActivityBoxMenuHome extends StatelessWidget {
                           ),
                           style: ElevatedButton.styleFrom(
                               primary: Colors.grey[850],
-                              minimumSize: Size(double.infinity, 40),
+                              minimumSize: const Size(double.infinity, 40),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10))),
                         ),
                       ),
                     )
-                  : SizedBox.shrink(),
+                  : const SizedBox.shrink(),
             ],
           ),
         ),

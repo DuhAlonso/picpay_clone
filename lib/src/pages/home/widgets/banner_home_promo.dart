@@ -15,8 +15,8 @@ class BannerHomePromo extends StatelessWidget {
         padding: const EdgeInsets.all(10.0),
         child: Row(
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 5),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 5),
               child: Icon(
                 Icons.redeem,
                 color: MyColors.color,
@@ -26,7 +26,7 @@ class BannerHomePromo extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                children: const [
                   Text(
                     'Seleção especial',
                     style: TextStyle(color: Colors.white),
@@ -41,8 +41,8 @@ class BannerHomePromo extends StatelessWidget {
                 ],
               ),
             ),
-            Spacer(),
-            Icon(
+            const Spacer(),
+            const Icon(
               Icons.arrow_forward_ios_rounded,
               color: MyColors.color,
             )

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:picpay_clone/src/core/ui/my_colors.dart';
-import 'package:picpay_clone/src/models/transction_model.dart';
 import 'package:picpay_clone/src/pages/home/widgets/activity_box_menu_home.dart';
 import 'package:picpay_clone/src/pages/home/widgets/banner_home_promo.dart';
 import 'package:picpay_clone/src/pages/home/widgets/central_donnation.dart';
@@ -27,7 +26,7 @@ class _HomePageState extends State<HomePage> {
         children: [
           Padding(
             padding: const EdgeInsets.only(top: 55),
-            child: Container(
+            child: SizedBox(
               child: CustomScrollView(
                 slivers: [
                   SliverToBoxAdapter(
@@ -40,7 +39,7 @@ class _HomePageState extends State<HomePage> {
                             padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
                             child: Row(
                               children: [
-                                CircleAvatar(
+                                const CircleAvatar(
                                   backgroundImage: NetworkImage(
                                       'https://avatars.githubusercontent.com/u/53386801?v=4'),
                                 ),
@@ -51,14 +50,14 @@ class _HomePageState extends State<HomePage> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text(
+                                      const Text(
                                         'Olá,',
                                         style: TextStyle(
                                           color: Colors.white,
                                         ),
                                       ),
                                       Row(
-                                        children: [
+                                        children: const [
                                           Text(
                                             '@duhalonso',
                                             style: TextStyle(
@@ -80,16 +79,16 @@ class _HomePageState extends State<HomePage> {
                                     ],
                                   ),
                                 ),
-                                Spacer(),
-                                Icon(
+                                const Spacer(),
+                                const Icon(
                                   Icons.currency_exchange,
                                   color: Colors.white,
                                   size: 22,
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 35,
                                 ),
-                                Icon(
+                                const Icon(
                                   Icons.forum,
                                   color: Colors.white,
                                   size: 22,
@@ -112,7 +111,7 @@ class _HomePageState extends State<HomePage> {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text(
+                                    const Text(
                                       "Saldo PicPay",
                                       style: TextStyle(
                                         fontSize: 14,
@@ -120,7 +119,7 @@ class _HomePageState extends State<HomePage> {
                                       ),
                                     ),
                                     Row(
-                                      children: [
+                                      children: const [
                                         Text(
                                           "R\$  19.512,56",
                                           style: TextStyle(
@@ -140,10 +139,10 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                   ],
                                 ),
-                                Spacer(),
+                                const Spacer(),
                                 ElevatedButton(
                                   onPressed: () {},
-                                  child: Text(
+                                  child: const Text(
                                     'Extrato',
                                     style:
                                         TextStyle(fontWeight: FontWeight.bold),
@@ -156,12 +155,12 @@ class _HomePageState extends State<HomePage> {
                           ),
                           Padding(
                             padding: const EdgeInsets.fromLTRB(10, 5, 0, 10),
-                            child: Container(
+                            child: SizedBox(
                               height: 100,
                               child: ListView(
                                 shrinkWrap: true,
                                 scrollDirection: Axis.horizontal,
-                                children: [
+                                children: const [
                                   MenuHomeBox(
                                       title: 'Pix', icon: Icons.open_with),
                                   MenuHomeBox(
@@ -195,7 +194,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   SliverToBoxAdapter(
                     child: Container(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(20),
                           topRight: Radius.circular(20),
@@ -208,10 +207,10 @@ class _HomePageState extends State<HomePage> {
                           Padding(
                             padding: const EdgeInsets.all(15.0),
                             child: TextFormField(
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                               decoration: InputDecoration(
-                                contentPadding:
-                                    EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+                                contentPadding: const EdgeInsets.fromLTRB(
+                                    20.0, 15.0, 20.0, 15.0),
                                 prefixIcon: Icon(
                                   Icons.search,
                                   color: Colors.white.withOpacity(0.5),
@@ -220,10 +219,12 @@ class _HomePageState extends State<HomePage> {
                                 hintStyle: TextStyle(
                                   color: Colors.white.withOpacity(0.5),
                                 ),
-                                labelStyle: TextStyle(color: Colors.white),
+                                labelStyle:
+                                    const TextStyle(color: Colors.white),
                                 isDense: true,
                                 filled: true,
-                                fillColor: Color.fromARGB(199, 80, 93, 108),
+                                fillColor:
+                                    const Color.fromARGB(199, 80, 93, 108),
                                 focusedBorder: OutlineInputBorder(
                                   //borderSide: BorderSide(color: Colors.white),
                                   borderRadius: BorderRadius.circular(10),
@@ -235,7 +236,7 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                           ),
-                          Text(
+                          const Text(
                             "Sugestões para você",
                             textAlign: TextAlign.start,
                             style: TextStyle(
@@ -246,63 +247,22 @@ class _HomePageState extends State<HomePage> {
                           ),
                           Padding(
                             padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                            child: Container(
+                            child: SizedBox(
                               height: 100,
-                              child: ListView(
+                              child: ListView.builder(
                                 shrinkWrap: true,
                                 scrollDirection: Axis.horizontal,
-                                children: [
-                                  SuggestionAvatar(
-                                    title: 'Fazer pix com Cartão',
-                                    urlAvatar:
-                                        'https://pontospravoar.com/wp-content/uploads/2021/07/Capturar.png',
-                                  ),
-                                  SuggestionAvatar(
-                                    title: '@elon.musk',
-                                    urlAvatar:
-                                        'https://istoe.com.br/wp-content/uploads/sites/14/2022/05/38ca4ee13998c337d61558c6d3b07f48c6f445d4-1-418x235.jpg',
-                                  ),
-                                  SuggestionAvatar(
-                                    title: 'Cartão de Trasnporte',
-                                    urlAvatar:
-                                        'https://i1.sndcdn.com/avatars-ZyxjsUHtvEzHo4g4-oOv4cA-t240x240.jpg',
-                                  ),
-                                  SuggestionAvatar(
-                                    title: '@jose.pereira',
-                                    urlAvatar:
-                                        'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png',
-                                  ),
-                                  SuggestionAvatar(
-                                    title: 'Pagar nas maquininhas',
-                                    urlAvatar:
-                                        'https://pluga.co/blog/wp-content/uploads/2018/08/qual-melhor-maquina-de-cartao.png',
-                                  ),
-                                  SuggestionAvatar(
-                                    title: 'ifood',
-                                    urlAvatar:
-                                        'https://www.cidademarketing.com.br/marketing/wp-content/uploads/2021/02/ifood.png',
-                                  ),
-                                  SuggestionAvatar(
-                                    title: '@ti.ventura',
-                                    urlAvatar:
-                                        'https://blog.portalt5.com.br/clapeclapeclape/wp-content/uploads/sites/25/2022/05/thiago-ventura-chega-a-netflix_380996_36.jpg',
-                                  ),
-                                  SuggestionAvatar(
-                                    title: 'Uber',
-                                    urlAvatar:
-                                        'https://www.aberje.com.br/wp-content/uploads/2021/04/Uber-Logo3.png',
-                                  ),
-                                  SuggestionAvatar(
-                                    title: 'Netflix',
-                                    urlAvatar:
-                                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp0CazCtm3KHnZhXhAmyYX0IJxeSaIPbVMFMXHj8ASl8dwYd_EJVYlypzyHu9A1kYQKwc&usqp=CAU',
-                                  )
-                                ],
+                                itemCount: app_data.suggestion.length,
+                                itemBuilder: (context, index) {
+                                  return SuggestionAvatar(
+                                    model: app_data.suggestion[index],
+                                  );
+                                },
                               ),
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
+                          const Padding(
+                            padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
                             child: BannerHomePromo(),
                           )
                         ],
@@ -322,7 +282,7 @@ class _HomePageState extends State<HomePage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisSize: MainAxisSize.min,
-                        children: [
+                        children: const [
                           Text(
                             'Pague suas contas pelo PicPay',
                             style: TextStyle(
@@ -345,45 +305,15 @@ class _HomePageState extends State<HomePage> {
                     child: Container(
                       color: Colors.black,
                       height: 180,
-                      padding: EdgeInsets.all(10),
-                      child: ListView(
+                      padding: const EdgeInsets.all(10),
+                      child: ListView.builder(
                         shrinkWrap: true,
+                        itemCount: app_data.activityMenu.length,
                         scrollDirection: Axis.horizontal,
-                        children: [
-                          ActivityBoxMenuHome(
-                            title: 'IPTU 2022',
-                            urlPhoto:
-                                'https://pngpress.com/wp-content/uploads/2020/08/uploads_house_house_PNG17.png',
-                          ),
-                          ActivityBoxMenuHome(
-                            title: 'IPVA 2022',
-                            color: Colors.purple[50],
-                            urlPhoto:
-                                'https://w7.pngwing.com/pngs/192/121/png-transparent-steering-wheel-car-rim-steering-wheel-driving-photography-car.png',
-                          ),
-                          ActivityBoxMenuHome(
-                            title: 'Matrícula da escola ou faculdade',
-                            urlPhoto:
-                                'https://cdn-icons-png.flaticon.com/512/2097/2097072.png',
-                          ),
-                          ActivityBoxMenuHome(
-                            title: 'Material escolar',
-                            urlPhoto:
-                                'https://img.freepik.com/vetores-gratis/coleta-de-material-escolar_1234-45.jpg',
-                          ),
-                          ActivityBoxMenuHome(
-                            title: 'Viagens',
-                            color: Colors.amber[100],
-                            urlPhoto:
-                                'https://w7.pngwing.com/pngs/170/266/png-transparent-travel-vacation-summer-orange-suitcase-bag.png',
-                          ),
-                          ActivityBoxMenuHome(
-                            title: 'Seguros',
-                            color: Colors.purple[200],
-                            urlPhoto:
-                                'https://www.nancyseguros.com.br/img/diferenciais.png',
-                          ),
-                        ],
+                        itemBuilder: (context, index) {
+                          return ActivityBoxMenuHome(
+                              model: app_data.activityMenu[index]);
+                        },
                       ),
                     ),
                   ),
@@ -407,7 +337,7 @@ class _HomePageState extends State<HomePage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisSize: MainAxisSize.min,
-                        children: [
+                        children: const [
                           Text(
                             'Aproveite as vantagens',
                             style: TextStyle(
@@ -430,44 +360,15 @@ class _HomePageState extends State<HomePage> {
                     child: Container(
                       color: Colors.black,
                       height: 190,
-                      padding: EdgeInsets.all(10),
-                      child: ListView(
-                        shrinkWrap: true,
-                        scrollDirection: Axis.horizontal,
-                        children: [
-                          ActivityBoxMenuHome(
-                            title: 'Deixe seu dinheiro rendendo 105% do CDI',
-                            color: Colors.purple[100],
-                            urlPhoto:
-                                'https://cdn-icons-png.flaticon.com/512/3310/3310653.png',
-                          ),
-                          ActivityBoxMenuHome(
-                            title: 'Cashback: pague e ganhe dinheiro de volta',
-                            color: Colors.yellow[50],
-                            urlPhoto:
-                                'https://media.istockphoto.com/vectors/cashback-concept-smartphone-with-button-get-started-the-cashback-vector-id1334302963?b=1&k=20&m=1334302963&s=170667a&w=0&h=OHYeGgQ29vafpb7VcGwvUMr1HH7GGytKErjvPbptdK0=',
-                          ),
-                          ActivityBoxMenuHome(
-                            color: Colors.purple[200],
-                            title: 'Adicione dinheiro e pague o quiser',
-                            urlPhoto:
-                                'https://cdn-icons-png.flaticon.com/512/5163/5163814.png',
-                          ),
-                          ActivityBoxMenuHome(
-                            color: Colors.green,
-                            title: 'Encontre e pague locais próximos a você',
-                            urlPhoto:
-                                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbcaenTheVnklIc2-vWZnkDdbkYyu4n2MSiA&usqp=CAU',
-                          ),
-                          ActivityBoxMenuHome(
-                            title:
-                                'Pix: transfira ou receba dinheiro a qualquer hora',
-                            color: Colors.amber[100],
-                            urlPhoto:
-                                'https://logospng.org/download/pix/logo-pix-icone-512.png',
-                          ),
-                        ],
-                      ),
+                      padding: const EdgeInsets.all(10),
+                      child: ListView.builder(
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          itemCount: app_data.activityMenu2.length,
+                          itemBuilder: (context, index) {
+                            return ActivityBoxMenuHome(
+                                model: app_data.activityMenu2[index]);
+                          }),
                     ),
                   ),
                   SliverToBoxAdapter(
@@ -492,7 +393,7 @@ class _HomePageState extends State<HomePage> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Row(
-                            children: [
+                            children: const [
                               Text(
                                 'Compre créditos e aproveite',
                                 style: TextStyle(
@@ -510,10 +411,10 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ],
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 8,
                           ),
-                          Text(
+                          const Text(
                             'Seja Gift Card, recarga ou cupom, encontre\ncréditos para o que você precisa',
                             style: TextStyle(color: Colors.white, fontSize: 17),
                           ),
@@ -525,46 +426,15 @@ class _HomePageState extends State<HomePage> {
                     child: Container(
                       color: Colors.black,
                       height: 200,
-                      padding: EdgeInsets.all(10),
-                      child: ListView(
+                      padding: const EdgeInsets.all(10),
+                      child: ListView.builder(
                         shrinkWrap: true,
                         scrollDirection: Axis.horizontal,
-                        children: [
-                          ActivityBoxMenuHome(
-                            title: 'Recarga de celular',
-                            color: Colors.purple[100],
-                            subTitle: 'Vivo, Claro, Tim, Oi e outras',
-                            isTwoLines: true,
-                            urlPhoto:
-                                'https://djpdv.com.br/wp-content/uploads/2020/02/Claro-Oi-Tim-Vivo-e-Nextel-Aprenda-como-negociar-d%C3%ADvida-com-operadora-de-celular-1.png',
-                          ),
-                          ActivityBoxMenuHome(
-                            title: 'iFood',
-                            color: Colors.purple[100],
-                            subTitle: 'Compre créditos e faça seu pedido',
-                            isTwoLines: true,
-                            urlPhoto:
-                                'https://www.cidademarketing.com.br/marketing/wp-content/uploads/2021/02/ifood.png',
-                          ),
-                          ActivityBoxMenuHome(
-                            title: 'PS Store',
-                            color: Colors.purple[100],
-                            subTitle:
-                                'Compre Gift Card para a loja do PlayStation',
-                            isTwoLines: true,
-                            urlPhoto:
-                                'https://cdn.vox-cdn.com/thumbor/BkWmOWbSdJ0QFn01b455Kj7w15E=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/22405993/playstation_store.jpg',
-                          ),
-                          ActivityBoxMenuHome(
-                            title: 'Netflix',
-                            color: Colors.purple[100],
-                            subTitle:
-                                'Compre créditos e assista filmes e séries',
-                            isTwoLines: true,
-                            urlPhoto:
-                                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp0CazCtm3KHnZhXhAmyYX0IJxeSaIPbVMFMXHj8ASl8dwYd_EJVYlypzyHu9A1kYQKwc&usqp=CAU',
-                          ),
-                        ],
+                        itemCount: app_data.activityMenu3.length,
+                        itemBuilder: (context, index) {
+                          return ActivityBoxMenuHome(
+                              model: app_data.activityMenu3[index]);
+                        },
                       ),
                     ),
                   ),
@@ -590,7 +460,7 @@ class _HomePageState extends State<HomePage> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Row(
-                            children: [
+                            children: const [
                               Text(
                                 'Site da loja com cashback',
                                 style: TextStyle(
@@ -608,10 +478,10 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ],
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 8,
                           ),
-                          Text(
+                          const Text(
                             'Compre o que quiser no site da loja e ganhe\ncashback. Confira!',
                             style: TextStyle(color: Colors.white, fontSize: 17),
                           ),
@@ -623,40 +493,15 @@ class _HomePageState extends State<HomePage> {
                     child: Container(
                       color: Colors.black,
                       height: 200,
-                      padding: EdgeInsets.all(10),
-                      child: ListView(
+                      padding: const EdgeInsets.all(10),
+                      child: ListView.builder(
                         shrinkWrap: true,
                         scrollDirection: Axis.horizontal,
-                        children: [
-                          ActivityBoxMenuHome(
-                            title: 'Amazon',
-                            color: Colors.blueGrey[700],
-                            contentButton: true,
-                            urlPhoto:
-                                'https://upload.wikimedia.org/wikipedia/commons/d/de/Amazon_icon.png',
-                          ),
-                          ActivityBoxMenuHome(
-                            title: 'Shopee',
-                            color: Colors.purple[100],
-                            contentButton: true,
-                            urlPhoto:
-                                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNyZf0xJnMzcvqAk1QyMXvvWNTwFdT405JQbApxfPf2_ZphBtq8sVCDqvOPFPVAYN-XWw&usqp=CAU',
-                          ),
-                          ActivityBoxMenuHome(
-                            title: 'Netshoes',
-                            color: Colors.purple[100],
-                            contentButton: true,
-                            urlPhoto:
-                                'https://lh3.googleusercontent.com/iI9LKipr3q2FHuO1frpcNfEAphA1HLzS5qYTiG1p6ZxHTxx1vp_jESrb-xOw64WYZtI',
-                          ),
-                          ActivityBoxMenuHome(
-                            title: 'AliExpress',
-                            color: Colors.purple[100],
-                            contentButton: true,
-                            urlPhoto:
-                                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNJEtwuNdGdYmq4XXfrbYDZQNDwx_81y085hexoH_VHYGdUAE5sVoo4CFeiK8jgPMfPPA&usqp=CAU',
-                          ),
-                        ],
+                        itemCount: app_data.activityMenu4.length,
+                        itemBuilder: (context, index) {
+                          return ActivityBoxMenuHome(
+                              model: app_data.activityMenu4[index]);
+                        },
                       ),
                     ),
                   ),
@@ -680,7 +525,7 @@ class _HomePageState extends State<HomePage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisSize: MainAxisSize.min,
-                        children: [
+                        children: const [
                           Text(
                             'Mais mobilidade para você',
                             style: TextStyle(
@@ -703,30 +548,15 @@ class _HomePageState extends State<HomePage> {
                     child: Container(
                       color: Colors.black,
                       height: 190,
-                      padding: EdgeInsets.all(10),
-                      child: ListView(
+                      padding: const EdgeInsets.all(10),
+                      child: ListView.builder(
                         shrinkWrap: true,
                         scrollDirection: Axis.horizontal,
-                        children: [
-                          ActivityBoxMenuHome(
-                            title: 'Recarregue seu cartão de transporte',
-                            color: Colors.purple[100],
-                            urlPhoto:
-                                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5aqPnzvdRxZiQVaovKey1L-60zmfsTMldvlwc6MMxR4Mf-cjnmIQUn_WUCoNSCqFfqkQ&usqp=CAU',
-                          ),
-                          ActivityBoxMenuHome(
-                            title: 'Compre créditos para o Uber no PicPay',
-                            color: Colors.yellow[50],
-                            urlPhoto:
-                                'https://logodownload.org/wp-content/uploads/2015/05/uber-logo-1-1.png',
-                          ),
-                          ActivityBoxMenuHome(
-                            color: Colors.purple[200],
-                            title: 'Shell Box: abasteça e pague pelo celular',
-                            urlPhoto:
-                                'https://play-lh.googleusercontent.com/FrSwdzib9XbPQO-DhGhzN1uAXwEbmDhZIZHS7nBCACPqFPYJW2_DA6qyFGJsVW7toQ',
-                          ),
-                        ],
+                        itemCount: app_data.activityMenu5.length,
+                        itemBuilder: (context, index) {
+                          return ActivityBoxMenuHome(
+                              model: app_data.activityMenu5[index]);
+                        },
                       ),
                     ),
                   ),
@@ -746,7 +576,7 @@ class _HomePageState extends State<HomePage> {
                       height: 170,
                       padding: const EdgeInsets.all(10),
                       color: Colors.black,
-                      child: CentralDonnation(),
+                      child: const CentralDonnation(),
                     ),
                   ),
                   SliverToBoxAdapter(
@@ -766,7 +596,7 @@ class _HomePageState extends State<HomePage> {
                       color: Colors.black,
                       child: ListView.separated(
                           padding: EdgeInsets.zero,
-                          physics: NeverScrollableScrollPhysics(),
+                          physics: const NeverScrollableScrollPhysics(),
                           shrinkWrap: true,
                           itemBuilder: (context, index) {
                             return TransanctionsTile(
@@ -810,22 +640,22 @@ class Delegate extends SliverPersistentHeaderDelegate {
       color: Colors.black,
       child: Row(
         children: [
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
-          Text(
+          const Text(
             'Atividades',
             style: TextStyle(color: Colors.white),
           ),
-          Spacer(),
-          TextButton(onPressed: () {}, child: Text('Todas')),
+          const Spacer(),
+          TextButton(onPressed: () {}, child: const Text('Todas')),
           TextButton(
               onPressed: () {},
-              child: Text(
+              child: const Text(
                 'Minhas',
                 style: TextStyle(color: Colors.white),
               )),
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
         ],

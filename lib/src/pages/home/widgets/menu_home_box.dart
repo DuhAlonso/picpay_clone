@@ -20,7 +20,7 @@ class MenuHomeBox extends StatelessWidget {
             borderRadius: BorderRadius.circular(10)),
         height: 50,
         width: 80,
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -29,13 +29,13 @@ class MenuHomeBox extends StatelessWidget {
               color: Colors.white,
               size: 30,
             ),
-            SizedBox(
+            const SizedBox(
               height: 5,
             ),
             Text(
               title,
               overflow: TextOverflow.ellipsis,
-              style: TextStyle(
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),

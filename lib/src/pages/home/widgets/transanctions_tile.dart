@@ -5,14 +5,14 @@ class TransanctionsTile extends StatelessWidget {
   final TransctionModel transctionModel;
 
   const TransanctionsTile({
-    required TransctionModel this.transctionModel,
+    required this.transctionModel,
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.fromLTRB(15, 0, 15, 5),
+      padding: const EdgeInsets.fromLTRB(15, 0, 15, 5),
       child: Column(
         children: [
           Padding(
@@ -24,30 +24,30 @@ class TransanctionsTile extends StatelessWidget {
                   radius: 26,
                   backgroundImage: NetworkImage(transctionModel.urlAvatar),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 15,
                 ),
                 Text(
                   transctionModel.fromUser,
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontWeight: FontWeight.bold, color: Colors.white),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 5),
                   child: Text(
                     transctionModel.description,
-                    style: TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white),
                   ),
                 ),
                 Text(
                   transctionModel.toUser,
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontWeight: FontWeight.bold, color: Colors.white),
                 ),
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Row(
@@ -72,44 +72,44 @@ class TransanctionsTile extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 2),
                 child: Text(
                   transctionModel.days.toString(),
-                  style: TextStyle(fontSize: 13, color: Colors.grey),
+                  style: const TextStyle(fontSize: 13, color: Colors.grey),
                 ),
               ),
               Text(
                 transctionModel.period,
-                style: TextStyle(fontSize: 13, color: Colors.grey),
+                style: const TextStyle(fontSize: 13, color: Colors.grey),
               ),
-              Text(
+              const Text(
                 ' atrás',
                 style: TextStyle(fontSize: 13, color: Colors.grey),
               ),
-              Spacer(),
-              Icon(
+              const Spacer(),
+              const Icon(
                 Icons.mode_comment_outlined,
                 color: Colors.grey,
                 size: 22,
               ),
-              SizedBox(
+              const SizedBox(
                 width: 5,
               ),
               Text(
                 transctionModel.comments.toString(),
-                style: TextStyle(fontSize: 17, color: Colors.grey),
+                style: const TextStyle(fontSize: 17, color: Colors.grey),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
-              Icon(
+              const Icon(
                 Icons.favorite_border_rounded,
                 size: 22,
                 color: Colors.grey,
               ),
-              SizedBox(
+              const SizedBox(
                 width: 5,
               ),
               Text(
                 transctionModel.likes.toString(),
-                style: TextStyle(fontSize: 17, color: Colors.grey),
+                style: const TextStyle(fontSize: 17, color: Colors.grey),
               ),
             ],
           )

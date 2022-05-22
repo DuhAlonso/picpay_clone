@@ -10,7 +10,7 @@ void main() {
           primarySwatch: MyColors.color,
         ),
       ),
-      home: PersistentTabVirePage(),
+      home: const PersistentTabVirePage(),
     ),
   );
 }

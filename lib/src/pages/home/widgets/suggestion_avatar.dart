@@ -1,35 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:picpay_clone/src/models/suggestion_model.dart';
 
 class SuggestionAvatar extends StatelessWidget {
-  final String title;
-  final String urlAvatar;
+  final SuggestionModel model;
 
   const SuggestionAvatar({
     Key? key,
-    required this.title,
-    required this.urlAvatar,
+    required this.model,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 70,
       width: 65,
       child: Column(
         children: [
           CircleAvatar(
             radius: 25,
-            backgroundImage: NetworkImage(urlAvatar),
+            backgroundImage: NetworkImage(model.urlAvatar),
           ),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           Text(
-            title,
+            model.title,
             overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.center,
             maxLines: 2,
-            style: TextStyle(color: Colors.white, fontSize: 11),
+            style: const TextStyle(color: Colors.white, fontSize: 11),
           ),
         ],
       ),
